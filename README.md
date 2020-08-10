@@ -29,15 +29,22 @@ So that I can keep track of what I'm spending,
 I want to be able to print out a statment of my spending with dates.
 
 ### Planning 
-
+```
 Class: Account
 
 Methods: .deposit
          .withdraw
          .statment
          .current_balance
+```
 
 ![Diagram](images/bank-tech-test-class-diagram.png)
+
+
+### How to run
+
+1. Fork or Clone this repo.
+2. Run bundle install.
 
 ### Requirements
 
