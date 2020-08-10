@@ -41,10 +41,18 @@ Methods: .deposit
 ![Diagram](images/bank-tech-test-class-diagram.png)
 
 
-### How to run
+### How to run program
 
 1. Fork or Clone this repo.
 2. Run bundle install.
+3. Run 'irb' in your console.
+4. 
+
+### How to run tests
+
+1. Fork or Clone this repo.
+2. Run bundle install.
+3. Run rspec in file to see tests.
 
 ### Requirements
 
