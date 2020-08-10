@@ -28,6 +28,15 @@ As a customer,
 So that I can keep track of what I'm spending,
 I want to be able to print out a statment of my spending with dates.
 
+### Planning 
+
+Class: Account
+
+Methods: .deposit
+         .withdraw
+         .statment
+         .current_balance
+
 ### Requirements
 
 * You should be able to interact with your code via a REPL like IRB or the JavaScript console.  (You don't need to implement a command line interface that takes input from STDIN.)
