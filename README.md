@@ -37,7 +37,7 @@ Methods: .deposit
          .statment
          .current_balance
 
-(Diagram)[images/bank-tech-test-class-diagram.png]
+![Diagram](images/bank-tech-test-class-diagram.png)
 
 ### Requirements
 
