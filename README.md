@@ -10,6 +10,24 @@ You'll work alone, and you'll also review your own code so you can practice refl
 
 ## Specification
 
+### User story
+
+As a customer,
+So that I can save money.
+I want to open a bank account with a deposit
+
+As a customer,
+So that I can continue adding to my savings,
+I want to be able to deposit into my back account
+
+As a customer,
+So that I can spend my money that I've saved,
+I want to be able to withdraw money from my bank account.
+
+As a customer,
+So that I can keep track of what I'm spending,
+I want to be able to print out a statment of my spending with dates.
+
 ### Requirements
 
 * You should be able to interact with your code via a REPL like IRB or the JavaScript console.  (You don't need to implement a command line interface that takes input from STDIN.)
