@@ -37,6 +37,8 @@ Methods: .deposit
          .statment
          .current_balance
 
+(Diagram)[images/bank-tech-test-class-diagram.png]
+
 ### Requirements
 
 * You should be able to interact with your code via a REPL like IRB or the JavaScript console.  (You don't need to implement a command line interface that takes input from STDIN.)
