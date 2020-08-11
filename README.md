@@ -38,6 +38,17 @@ Methods: .deposit
          .current_balance
 ```
 
+```
+Input:                  ||    Output:
+account.deposit(100)          => 100
+account.withdraw(50)          => 50
+account.withdraw(1000)        => "Your withdrawal exceeds your current balance."
+account.statement             => date || credit || debit || balance
+                            11/08/2020 ||       ||  50   || 50
+                            11/08/2020 ||  100  ||       || 100
+
+```
+
 ![Diagram](images/bank-tech-test-class-diagram.png)
 
 
