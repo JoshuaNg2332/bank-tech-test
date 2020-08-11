@@ -5,24 +5,26 @@ class Account
   def initialize
     @current_balance = 0
     @date = DateTime.now.strftime "%d/%m/%Y"
-    @statment = ["#{@date} ||  #{@credit}  ||  #{@debit}  ||  #{@current_balance}"]
+    @statement = []
   end
 
   def deposit(amount)
     @credit = amount
     @current_balance += amount
-    return @current_balance
+
+    @statement << ("#{@date} ||  #{@credit}  ||    ||  #{@current_balance}")
   end
 
   def withdraw(amount)
     @debit = amount
     raise "Your withdrawal exceeds your current balance." if @debit > @current_balance
     @current_balance -= @debit
-    return @current_balance
+
+    @statement << [@date , nil , @debit , @current_balance]
   end
 
   def statement
-    return @statment
+    return @statement
   end
 
 end

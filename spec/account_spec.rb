@@ -36,4 +36,10 @@ describe Account do
     end
   end
 
+  describe 'Printing the statement'
+    it 'grabs previous transactions and prints out the bank statement including the date, transaction and current balance.' do
+      account.deposit(1000)
+      expect(account.statement).to eq(["11/08/2020 ||  1000  ||    ||  1000"])
+  end
+
 end
