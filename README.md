@@ -49,7 +49,8 @@ account.statement             => date || credit || debit || balance
 
 ```
 
-![Diagram](images/bank-tech-test-class-diagram.png)
+![DiagramV1](images/bank-tech-test-class-diagram.png)
+![DiagramV2](images/bank-tech-test-class-diagram(1).png)
 
 
 ### How to run program
