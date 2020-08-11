@@ -6,4 +6,8 @@ class Account
     @current_balance = 0
   end
 
+  def deposit(amount)
+    @current_balance += amount
+  end
+
 end
