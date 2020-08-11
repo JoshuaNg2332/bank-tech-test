@@ -23,4 +23,12 @@ describe Account do
     end
   end
 
+  describe 'Withdraw' do
+    it 'adds 100 then subtracts 50 from the balance' do
+      account.deposit(100)
+      account.withdraw(50)
+      expect(account.current_balance).to eq(50)
+    end
+  end
+
 end
