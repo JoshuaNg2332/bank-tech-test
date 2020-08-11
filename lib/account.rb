@@ -1,3 +1,5 @@
+require_relative 'statement'
+
 class Account
 
   attr_reader :current_balance
@@ -5,14 +7,14 @@ class Account
   def initialize
     @current_balance = 0
     @date = DateTime.now.strftime "%d/%m/%Y"
-    @statement = []
+    @transactions = []
   end
 
   def deposit(amount)
     @credit = amount
     @current_balance += amount
 
-    @statement << ("#{@date} ||  #{@credit}  ||    ||  #{@current_balance}")
+    @transactions << ("#{@date} ||  #{@credit}  ||    ||  #{@current_balance}")
   end
 
   def withdraw(amount)
@@ -20,11 +22,13 @@ class Account
     raise "Your withdrawal exceeds your current balance." if @debit > @current_balance
     @current_balance -= @debit
 
-    @statement << [@date , nil , @debit , @current_balance]
+    @transactions << ("#{@date} ||    ||  #{@debit}  ||  #{@current_balance}")
   end
 
   def statement
-    return @statement
+    statement = Statement.new
+    transaction = @transactions.join("\n")
+    return statement.headers + transaction
   end
 
 end
