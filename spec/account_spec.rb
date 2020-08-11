@@ -29,6 +29,11 @@ describe Account do
       account.withdraw(50)
       expect(account.current_balance).to eq(50)
     end
+
+    it 'raises an error when you try to withdraw more money than the current balance.' do
+      account.deposit(100)
+      expect{account.withdraw(200)}.to raise_error "Your withdrawal exceeds your current balance."
+    end
   end
 
 end
