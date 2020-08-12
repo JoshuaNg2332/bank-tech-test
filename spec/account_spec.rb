@@ -5,6 +5,10 @@ require 'account'
 describe Account do
   let(:account) { Account.new }
 
+  before do
+    @time_now = Time.now.strftime('%d/%m/%Y')
+  end
+
   describe 'Balance' do
     it 'has a starting balance of 0' do
       expect(account.current_balance).to eq(0)
@@ -55,10 +59,11 @@ describe Account do
     it 'prints out current date if no date is provided' do
       account.deposit(1000, nil)
       account.withdraw(400, nil)
+      allow(Time).to receive(:now).and_return(@time_now)
       statement = <<~STATEMENT
         date || credit || debit || balance
-        12/08/2020 ||    ||  400.00  ||  600.00
-        12/08/2020 ||  1000.00  ||    ||  1000.00
+        #{@time_now} ||    ||  400.00  ||  600.00
+        #{@time_now} ||  1000.00  ||    ||  1000.00
       STATEMENT
       expect { account.statement }.to output(statement).to_stdout
     end
