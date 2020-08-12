@@ -40,12 +40,18 @@ describe Account do
   describe 'Printing the statement' do
     it 'grabs previous transactions and prints out the bank statement including the date, transaction and current balance.' do
       account.deposit(1000,'12/08/2020')
-      expect(account.statement).to eq("date || credit || debit || balance\n12/08/2020 ||  1000  ||    ||  1000")
+      expect(account.statement).to eq("date || credit || debit || balance\n12/08/2020 ||  1000.00  ||    ||  1000.00")
     end
+
     it 'grabs multiple previous transactions and prints out the bank statement including the date, transaction and current balance.' do
       account.deposit(1000,'12/08/2020')
       account.withdraw(500,'12/08/2020')
-      expect(account.statement).to eq("date || credit || debit || balance\n12/08/2020 ||  1000  ||    ||  1000\n12/08/2020 ||    ||  500  ||  500")
+      expect(account.statement).to eq("date || credit || debit || balance\n12/08/2020 ||  1000.00  ||    ||  1000.00\n12/08/2020 ||    ||  500.00  ||  500.00")
+    end
+
+    it 'prints out current date if no date is provided' do
+      account.deposit(1000,'')
+      expect(account.statement).to eq("date || credit || debit || balance\n12/08/2020 ||  1000.00  ||    ||  1000.00")
     end
   end
 end

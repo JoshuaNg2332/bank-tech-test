@@ -58,7 +58,9 @@ account.statement             => date || credit || debit || balance
 1. Fork or Clone this repo.
 2. Run bundle install.
 3. Run 'irb' in your console.
-4. 
+4. In the console type; require './lib/account.rb'
+5. Then to create a new account type; account = Account.new
+6. At this stage you have several commands, 'account.deposit(amount,"date"), account.withdraw(amount,"date"), puts account.statement'
 
 ### How to run tests
 
