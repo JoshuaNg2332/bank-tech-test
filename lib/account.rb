@@ -1,4 +1,5 @@
 require_relative 'statement'
+require 'date'
 
 class Account
 
@@ -6,21 +7,33 @@ class Account
 
   def initialize
     @current_balance = 0
-    @date = DateTime.now.strftime "%d/%m/%Y"
     @transactions = []
   end
 
-  def deposit(amount)
+  def deposit(amount, date)
     @credit = amount
     @current_balance += amount
+
+    if date == nil
+      @date = DateTime.now.strftime "%d/%m/%Y"
+    end
+
+    @date = date
 
     @transactions << ("#{@date} ||  #{@credit}  ||    ||  #{@current_balance}")
   end
 
-  def withdraw(amount)
+  def withdraw(amount, date)
     @debit = amount
     raise "Your withdrawal exceeds your current balance." if @debit > @current_balance
     @current_balance -= @debit
+    
+
+    if date == nil
+      date = Time.now.strftime("%d/%m/%Y")
+    end
+
+    @date = date
 
     @transactions << ("#{@date} ||    ||  #{@debit}  ||  #{@current_balance}")
   end
@@ -28,7 +41,7 @@ class Account
   def statement
     statement = Statement.new
     transaction = @transactions.join("\n")
-    return statement.headers + transaction
+    statement.headers + transaction
   end
 
 end
