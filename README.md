@@ -34,8 +34,7 @@ Class: Account
 
 Methods: .deposit
          .withdraw
-         .statment
-         .current_balance
+         .statement
 ```
 
 ```
@@ -48,10 +47,28 @@ account.statement             => date || credit || debit || balance
                             11/08/2020 ||  100  ||       || 100
 
 ```
-
+V1
 ![DiagramV1](images/bank-tech-test-class-diagram.png)
-![DiagramV2](images/bank-tech-test-class-diagram(1).png)
 
+V2
+![DiagramV2](images/bank-tech-test-class-diagramV2.png)
+
+### Notes
+
+#### My approach and thoughts
+
+My appoach was to build a simple program and then spread out the separate methods into classes.
+I started with the creation of the account class then moved into creating the deposit, withdraw and statement methods.
+I did also create a statement class but at the time of writing, this is a WIP.
+
+I had the most trouble with my statement method where most of my focus was kept. This was due to multiple factors such as returning the statement correctly as well as trying various different things to get the statement to appear in the correct format.
+
+I structured the code to be easily readable and to have 100% test coverage.
+But I also structured it in a way that it can allow for easy moving to other classes.
+
+#### Screenshot of working app
+
+![WorkingProject](images/working_app.png)
 
 ### How to run program
 
