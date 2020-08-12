@@ -1,8 +1,9 @@
+# frozen_string_literal: true
+
 require 'statement'
 
 describe Statement do
-
-let(:statement) { Statement.new }
+  let(:statement) { Statement.new }
 
   describe 'Headers' do
     it 'can display the headers' do
