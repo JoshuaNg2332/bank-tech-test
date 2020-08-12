@@ -51,7 +51,8 @@ describe Account do
 
     it 'prints out current date if no date is provided' do
       account.deposit(1000,'')
-      expect(account.statement).to eq("date || credit || debit || balance\n12/08/2020 ||  1000.00  ||    ||  1000.00")
+      account.withdraw(400,'')
+      expect(account.statement).to eq("date || credit || debit || balance\n12/08/2020 ||  1000.00  ||    ||  1000.00\n12/08/2020 ||    ||  400.00  ||  600.00")
     end
   end
 end
