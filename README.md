@@ -53,6 +53,9 @@ V1
 V2
 ![DiagramV2](images/bank-tech-test-class-diagramV2.png)
 
+V3
+![DiagramV3](images/bank-tech-test-class-diagramV3.png)
+
 ### Notes
 
 #### My approach and thoughts

@@ -14,7 +14,6 @@ class Account
 
   def deposit(credit, date)
     @current_balance += credit
-
     date = DateTime.now.strftime '%d/%m/%Y' if date == nil
 
     @transactions << "#{date} ||  #{'%.2f' % credit}  ||    ||  #{'%.2f' % @current_balance}"
