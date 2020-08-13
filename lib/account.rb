@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 
-require_relative 'statement'
+require_relative 'Statement'
+require_relative 'Transaction'
 require 'date'
 
 # Class for the Account app
@@ -10,26 +11,31 @@ class Account
   def initialize
     @current_balance = 0
     @transactions = []
+    @date = DateTime.now.strftime '%d/%m/%Y'
   end
 
-  def deposit(credit, date)
-    @current_balance += credit
-    date = DateTime.now.strftime '%d/%m/%Y' if date == nil
+  def deposit(amount)
+    @current_balance += amount
 
-    @transactions << "#{date} ||  #{'%.2f' % credit}  ||    ||  #{'%.2f' % @current_balance}"
+    @transactions << "#{@date} ||  #{'%.2f' % amount}  ||    ||  #{'%.2f' % @current_balance}"
   end
 
-  def withdraw(debit, date)
-    raise 'Your withdrawal exceeds your current balance.' if debit > @current_balance
-    @current_balance -= debit
-    date = Time.now.strftime('%d/%m/%Y') if date == nil
+  def withdraw(amount)
+    raise 'Your withdrawal exceeds your current balance.' if amount > @current_balance
+    @current_balance -= amount
 
-    @transactions << "#{date} ||    ||  #{'%.2f' % debit}  ||  #{'%.2f' % @current_balance}"
+    @transactions << "#{@date} ||    ||  #{'%.2f' % amount}  ||  #{'%.2f' % @current_balance}"
   end
 
   def statement
     statement = Statement.new
+    # statement.print
     transaction = @transactions.reverse.join("\n")
     puts statement.headers + transaction
   end
+
+  def create_transaction(amount, type='nil', transaction_class = Transaction)
+    @transactions << transaction_class.create(amount, @balance, type)
+  end
+
 end
