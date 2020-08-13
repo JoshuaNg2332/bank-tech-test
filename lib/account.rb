@@ -12,26 +12,20 @@ class Account
     @transactions = []
   end
 
-  def deposit(amount, date)
-    @credit = amount
-    @current_balance += amount
-    @date = date
+  def deposit(credit, date)
+    @current_balance += credit
 
-    @date = DateTime.now.strftime '%d/%m/%Y' if @date == nil
+    date = DateTime.now.strftime '%d/%m/%Y' if date == nil
 
-    @transactions << "#{@date} ||  #{'%.2f' % @credit}  ||    ||  #{'%.2f' % @current_balance}"
+    @transactions << "#{date} ||  #{'%.2f' % credit}  ||    ||  #{'%.2f' % @current_balance}"
   end
 
-  def withdraw(amount, date)
-    @debit = amount
-    raise 'Your withdrawal exceeds your current balance.' if @debit > @current_balance
-    
-    @current_balance -= @debit
-    @date = date
+  def withdraw(debit, date)
+    raise 'Your withdrawal exceeds your current balance.' if debit > @current_balance
+    @current_balance -= debit
+    date = Time.now.strftime('%d/%m/%Y') if date == nil
 
-    @date = Time.now.strftime('%d/%m/%Y') if @date == nil
-
-    @transactions << "#{@date} ||    ||  #{'%.2f' % @debit}  ||  #{'%.2f' % @current_balance}"
+    @transactions << "#{date} ||    ||  #{'%.2f' % debit}  ||  #{'%.2f' % @current_balance}"
   end
 
   def statement
