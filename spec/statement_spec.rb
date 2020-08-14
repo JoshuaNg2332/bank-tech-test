@@ -5,15 +5,24 @@ require 'statement'
 describe Statement do
   let(:credit_transaction) { double :transaction, date: Date.today, amount: 1000, current_balance: 1000, type: nil }
   let(:debit_transaction) { double :transaction, date: Date.today, amount: 500, current_balance: 500, type: 'credit' }
-  let(:transactions_array) { [credit_transaction] }
+  let(:credit_transactions) { [credit_transaction] }
+  let(:debit_transactions) { [debit_transaction] }
 
   describe 'print' do
-    it 'prints the correct format of the transactions' do
+    it 'prints the correct format of the credit transaction' do
       print_statement = <<~STATEMENT
         date || credit || debit || balance
         #{Date.today} ||  1000.00  ||    ||  1000.00
       STATEMENT
-      expect {Statement.print(transactions_array)}.to output(print_statement).to_stdout
+      expect {Statement.print(credit_transactions)}.to output(print_statement).to_stdout
+    end
+
+    it 'prints the correct format of the debit transaction' do
+      print_statement = <<~STATEMENT
+        date || credit || debit || balance
+        #{Date.today} ||    ||  500.00  ||  500.00
+      STATEMENT
+      expect {Statement.print(debit_transactions)}.to output(print_statement).to_stdout
     end
   end
 
