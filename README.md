@@ -80,7 +80,7 @@ But I also structured it in a way that it can allow for easy moving to other cla
 3. Run 'irb' in your console.
 4. In the console type; require './lib/account.rb'
 5. Then to create a new account type; account = Account.new
-6. At this stage you have several commands, 'account.deposit(amount,"date"), account.withdraw(amount,"date"), account.statement'
+6. At this stage you have several commands, 'account.deposit(amount), account.withdraw(amount), account.statement'
 
 ### How to run tests
 
