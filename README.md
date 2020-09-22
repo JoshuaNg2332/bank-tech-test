@@ -60,7 +60,7 @@ V3
 
 #### My approach and thoughts
 
-My appoach was to build a simple program and then spread out the separate methods into classes.
+My approach was to build a simple program and then spread out the separate methods into classes.
 I started with the creation of the account class then moved into creating the deposit, withdraw and statement methods.
 I did also create a statement class but at the time of writing, this is a WIP.
 
