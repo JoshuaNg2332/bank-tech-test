@@ -66,7 +66,7 @@ I did also create a statement class but at the time of writing, this is a WIP.
 
 I had the most trouble with my statement method where most of my focus was kept. This was due to multiple factors such as returning the statement correctly as well as trying various different things to get the statement to appear in the correct format.
 
-I structured the code to be easily readable and to have 100% test coverage.
+I structured the code to be easily readable and to have 93.75% test coverage.
 But I also structured it in a way that it can allow for easy moving to other classes.
 
 #### Screenshot of working app
